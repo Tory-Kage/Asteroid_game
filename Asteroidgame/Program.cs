@@ -14,6 +14,8 @@ namespace Asteroidgame
             Form menu = new Form();
             menu.Width = 800;
             menu.Height = 600;
+
+
             SplashScreen.Init(menu);
             menu.Show();
             SplashScreen.Draw();
@@ -69,9 +71,13 @@ namespace Asteroidgame
 
             void startBtnClick(object sender, EventArgs e)
             {
-                Form game = new Form();
-                game.Width = 800;
-                game.Height = 600;
+                Form game = new Form()
+                {
+                    Width = Screen.PrimaryScreen.Bounds.Width,
+                    Height = Screen.PrimaryScreen.Bounds.Height
+                };
+                //game.Width = 800;
+                //game.Height = 600;
                 Game.Init(game);
                 game.FormClosed += Game_FormClosed;
                 game.Show();

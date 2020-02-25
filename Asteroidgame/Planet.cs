@@ -39,7 +39,7 @@ namespace Asteroidgame
         /// <param name="size">Размер</param>
         public Planet(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-            image = bitMapList[random.Next(0, bitMapList.Count)];
+            image = bitMapList[myRandom.RandomIntNumber(0, bitMapList.Count)];
         }
 
         /// <summary>Метод отрисовки объекта</summary>
@@ -55,11 +55,23 @@ namespace Asteroidgame
             if (Pos.X < 0 - Size.Width)
             {
                 Pos.X = Game.Width + Size.Width;
-                image = bitMapList[random.Next(0, bitMapList.Count)];
-                Pos.Y = Convert.ToInt32(random.NextDouble() * (double)Game.Height);
-                Size.Width = Convert.ToInt32((random.NextDouble() + 0.5) * Size.Width);
+                image = bitMapList[myRandom.RandomIntNumber(0, bitMapList.Count)];
+                Pos.Y = Convert.ToInt32(myRandom.RandomDoubleNumber() * (double)Game.Height);
+                Size.Width = Convert.ToInt32((myRandom.RandomDoubleNumber() + 0.5) * Size.Width);
                 Size.Height = Size.Width;
-                Dir.X = Convert.ToInt32((random.NextDouble() + 0.5) * Dir.X);
+                Dir.X = Convert.ToInt32((myRandom.RandomDoubleNumber() + 0.5) * Dir.X);
+                switch (myRandom.RandomIntNumber(0, 3))
+                {
+                    case 0:
+                        image.RotateFlip(RotateFlipType.Rotate180FlipNone);
+                        break;
+                    case 1:
+                        image.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                        break;
+                    case 2:
+                        image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                        break;
+                }
             }
         }
     }

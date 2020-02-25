@@ -24,7 +24,7 @@ namespace Asteroidgame
             if (Pos.X < 0 - Size.Width)
             {
                 Pos.X = Game.Width + Size.Width;
-                Pos.Y = Convert.ToInt32(random.NextDouble() * (double)Game.Height);
+                Pos.Y = Convert.ToInt32((myRandom.RandomDoubleNumber() * (0.9 - 0.1) + 0.1) * (double)Game.Height);
             }
 
         }

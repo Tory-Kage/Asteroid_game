@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asteroidgame", "Asteroidgame\Asteroidgame.csproj", "{5741014C-3902-4229-BDC8-EB094E1F3421}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker", "Worker", "{BF0ACA92-55EE-4AFC-9ADF-98CFECCE5A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{EA4649C1-1716-44E4-AFF7-96A94622183E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{5741014C-3902-4229-BDC8-EB094E1F3421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5741014C-3902-4229-BDC8-EB094E1F3421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5741014C-3902-4229-BDC8-EB094E1F3421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA4649C1-1716-44E4-AFF7-96A94622183E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4649C1-1716-44E4-AFF7-96A94622183E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4649C1-1716-44E4-AFF7-96A94622183E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA4649C1-1716-44E4-AFF7-96A94622183E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA4649C1-1716-44E4-AFF7-96A94622183E} = {BF0ACA92-55EE-4AFC-9ADF-98CFECCE5A3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08B09071-9EB7-46EA-9F26-555580EDA625}

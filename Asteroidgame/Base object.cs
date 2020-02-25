@@ -7,13 +7,12 @@ using System.Drawing;
 
 namespace Asteroidgame
 {
-    class BaseObject
+    abstract class BaseObject : ICollision
     {
         protected Point Pos;
         protected Point Dir;
         protected Size Size;
-        Bitmap image = new Bitmap("..\\..\\img/asteroid.png");
-        protected Random random = new Random();
+
 
         /// <summary>Инициализирует объект BaseObject</summary>
         /// <param name="pos">Позиция</param>
@@ -27,20 +26,19 @@ namespace Asteroidgame
         }
 
         /// <summary>Метод отрисовки объекта</summary>
-        public virtual void Draw()
-        {
-            Game.Buffer.Graphics.DrawImage(image, Pos.X, Pos.Y, Size.Width, Size.Height);
-        }
+        public abstract void Draw();
+
 
         /// <summary>Метод обновления местоположения объекта</summary>
-        public virtual void Update()
-        {
-            Pos.X = Pos.X + Dir.X;
-            Pos.Y = Pos.Y + Dir.Y;
-            if (Pos.X < 0) Dir.X = -Dir.X;
-            if (Pos.X > Game.Width - Size.Width) Dir.X = -Dir.X;
-            if (Pos.Y < 0) Dir.Y = -Dir.Y;
-            if (Pos.Y > Game.Height - Size.Height) Dir.Y = -Dir.Y;
-        }
+        public abstract void Update();
+
+
+        /// <summary>Возвращает истину, если произашло пересечение объектов</summary>
+        /// <param name="o">Объект, реализующий ICollision</param>
+        /// <returns></returns>
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+
+        public Rectangle Rect => new Rectangle(Pos, Size);
+
     }
 }
