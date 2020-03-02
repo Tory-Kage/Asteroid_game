@@ -49,7 +49,7 @@ namespace Asteroidgame
 
             Label autor = new Label
             {
-                Text = "Зинченко Владислав © " + DateTime.Now.Year.ToString(),
+                Text = "Сергей Ткачёв © " + DateTime.Now.Year.ToString(),
                 ForeColor = System.Drawing.Color.White,
                 BackColor = System.Drawing.Color.Black,
                 AutoSize = true,
@@ -73,8 +73,8 @@ namespace Asteroidgame
             {
                 Form game = new Form()
                 {
-                    Width = Screen.PrimaryScreen.Bounds.Width,
-                    Height = Screen.PrimaryScreen.Bounds.Height
+                    Width = (Screen.PrimaryScreen.Bounds.Width / 10) * 9,
+                    Height = (Screen.PrimaryScreen.Bounds.Height / 10) * 9
                 };
                 //game.Width = 800;
                 //game.Height = 600;
@@ -85,12 +85,12 @@ namespace Asteroidgame
             }
         }
 
-        /// <summary>Метод остановки таймера при завершении работы программы</summary>
+        /// <summary>Метод остановки таймера и отписки от него при закрытии формы</summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private static void Game_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Game.timer.Stop();
+            Game.Closed();
         }
     }
 

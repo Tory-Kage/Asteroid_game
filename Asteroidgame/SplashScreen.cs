@@ -12,7 +12,7 @@ namespace Asteroidgame
     {
         private static BufferedGraphicsContext _context;
         public static BufferedGraphics Buffer;
-        private static BaseObject[] objs;
+        public static BaseObject[] _objs;
 
         //const int commonSpeed = 3;
         //const int planetSpeed = 1;
@@ -29,7 +29,6 @@ namespace Asteroidgame
         public static int Width { get; set; }
         /// <summary>Высота окна</summary>
         public static int Height { get; set; }
-        internal static BaseObject[] Objs { get => objs; set => objs = value; }
 
         static SplashScreen()
         {

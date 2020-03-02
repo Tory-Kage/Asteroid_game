@@ -7,6 +7,8 @@ using System.Drawing;
 
 namespace Asteroidgame
 {
+    public delegate void Message();
+
     abstract class BaseObject : ICollision
     {
         protected Point Pos;
@@ -42,3 +44,4 @@ namespace Asteroidgame
 
     }
 }
+
